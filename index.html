@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>WSOOP</title>
+   <meta name="author" content="Joohyun Park">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="utf-8" />
+    <style>
+        html,
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: avenir, sans-serif;
+            font-size : 20px;
+              letter-spacing: 1.2px;
+            line-height: 1.6em;
+        }
+
+        #text {
+            color : white ;
+            background-color: transparent;
+            position: absolute;
+/*            text-align: center;*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text">
+        <p>- click and drag to draw particles <br>
+          - spacebar to change background color</p>
+    </div>
+
+    <script>
+        $("#text").delay(4200).fadeOut("slow");
+    </script>
+
+    <script src="sketch.js"></script>
+</body>
+</html>
