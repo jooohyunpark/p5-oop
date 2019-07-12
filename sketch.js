@@ -67,9 +67,6 @@ function Particle(x, y) {
     this.r = 1;
     this.maxR = random(5, 10);
     this.color = randomColor;
-    //    this.rd = random(122, 255);
-    //    this.rd = random(80, 84);
-    //    this.bl = 255;
     this.alpha = 1;
     this.switch = false;
     this.pos = createVector(this.x, this.y);
@@ -96,8 +93,6 @@ function Particle(x, y) {
         } else {
             if (this.r > 0) {
                 this.r -= .2;
-                //                 this.bl -= 6;
-                //                this.alpha -= 6;
             } else {
                 this.r = 0;
             }
