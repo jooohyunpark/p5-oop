@@ -1,7 +1,6 @@
 var p = [];
-var backgroundColor = 259; 
-//var randomColor = 140 ;
-var randomColor = 312 ;
+var backgroundColor = 259;
+var randomColor = 312;
 
 
 function setup() {
@@ -10,26 +9,17 @@ function setup() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight);
 }
 
 
 function draw() {
-    background(backgroundColor, 100, 100, 0.2);
-        recordParticles();
-        drawParticles();
-        killParticles(); 
+    background(backgroundColor, 100, 100, 100);
+    recordParticles();
+    drawParticles();
+    killParticles();
 }
 
-
-function keyPressed() {
-     if (keyIsDown(32)) {
-    backgroundColor = random(360);
-         console.log(backgroundColor);
-  }
-  }
-
-    
 function recordParticles() {
     if (mouseIsPressed) {
         noCursor();
@@ -39,15 +29,18 @@ function recordParticles() {
     }
 }
 
+function mousePressed() {
+    backgroundColor = random(360);
+}
 
 function mouseReleased() {
     cursor(ARROW);
-        randomColor = random(360);
+    randomColor = random(360);
 }
 
 
 function drawParticles() {
-     p.forEach(function(i)   {
+    p.forEach(function (i) {
         let noise = createVector(random(-.5, .5), random(-.5, .5));
         i.applyForce(noise);
         let friction = i.vel.copy();
@@ -55,7 +48,7 @@ function drawParticles() {
         i.applyForce(friction);
         i.update();
         i.show();
-    }  );
+    });
 }
 
 
@@ -73,28 +66,28 @@ function Particle(x, y) {
     this.y = y;
     this.r = 1;
     this.maxR = random(5, 10);
-    this.color = randomColor ; 
-//    this.rd = random(122, 255);
-//    this.rd = random(80, 84);
-//    this.bl = 255;
+    this.color = randomColor;
+    //    this.rd = random(122, 255);
+    //    this.rd = random(80, 84);
+    //    this.bl = 255;
     this.alpha = 1;
     this.switch = false;
     this.pos = createVector(this.x, this.y);
     this.vel = createVector(pmouseX + random(-5, 5), pmouseY + random(-5, 5)).sub(createVector(mouseX, mouseY));
     this.acc = createVector();
 
-    this.show = function() {
+    this.show = function () {
         noStroke();
         fill(this.color, 100, 100, this.alpha);
         ellipse(this.pos.x, this.pos.y, this.r * 2, this.r * 2);
     }
 
-    this.update = function() {
+    this.update = function () {
         this.vel.add(this.acc);
         this.vel.limit(5);
         this.pos.add(this.vel);
         this.acc.mult(0);
-        if (this.switch==false) {
+        if (this.switch == false) {
             if (this.r < this.maxR) {
                 this.r += 1;
             } else {
@@ -103,17 +96,15 @@ function Particle(x, y) {
         } else {
             if (this.r > 0) {
                 this.r -= .2;
-//                 this.bl -= 6;
-//                this.alpha -= 6;
+                //                 this.bl -= 6;
+                //                this.alpha -= 6;
             } else {
                 this.r = 0;
             }
         }
     }
 
-    this.applyForce = function(f) {
+    this.applyForce = function (f) {
         this.acc.add(f);
     }
 }
-    
-    
