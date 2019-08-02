@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>*</title>
     <meta name="author" content="Joohyun Park">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
@@ -11,10 +12,14 @@
         html,
         body {
             margin: 0;
-            overflow: hidden;
+            overflow: hidden !important;
             font-family: avenir, sans-serif;
             font-size: 20px;
             letter-spacing: 1.2px;
+        }
+
+        canvas {
+            overflow: hidden !important;
         }
 
         #text {
@@ -25,16 +30,19 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
     </style>
 </head>
 
 <body>
     <div id="text"> Click me! </div>
-
     <script>
         $(document.body).click(() => $("#text").fadeOut(1000));
+        $(document.body).bind("tap", () => $("#text").fadeOut(1000));
+
     </script>
 
     <script src="sketch.js"></script>
 </body>
+
 </html>
