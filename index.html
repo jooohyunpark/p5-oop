@@ -38,7 +38,7 @@
     <div id="text"> Click me! </div>
     <script>
         $(document.body).click(() => $("#text").fadeOut(1000));
-        $(document.body).bind("tap", () => $("#text").fadeOut(1000));
+        $(document.body).on("tap", () => $("#text").fadeOut(1000));
 
     </script>
 
