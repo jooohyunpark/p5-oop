@@ -13,14 +13,10 @@
         html,
         body {
             margin: 0;
-            overflow: hidden !important;
+/*            overflow: hidden !important;*/
             font-family: avenir, sans-serif;
             font-size: 20px;
             letter-spacing: 1.2px;
-        }
-
-        canvas {
-            overflow: hidden !important;
         }
 
         #text {
@@ -32,6 +28,7 @@
             transform: translate(-50%, -50%);
         }
     </style>
+    <script src="./body-scroll-lock-min.js"></script>
 </head>
 
 <body>
@@ -39,6 +36,9 @@
     <script>
         $(document).click(() => $("#text").fadeOut(1000));
         $(document).on("tap", () => $("#text").fadeOut(1000));
+
+        const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+        disableBodyScroll(document.body);
     </script>
 
     <script src="sketch.js"></script>
