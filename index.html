@@ -37,8 +37,11 @@
 <body>
     <div id="text"> Click me! </div>
     <script>
-        $(document.body).click(() => $("#text").fadeOut(1000));
-        $(document.body).on("tap", () => $("#text").fadeOut(1000));
+        $(document).click(() => $("#text").fadeOut(1000));
+        $(document).on("tap", () => $("#text").fadeOut(1000));
+        document.body.ontouchend = (e) => {
+            e.preventDefault();
+        };
     </script>
 
     <script src="sketch.js"></script>
