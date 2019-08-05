@@ -31,6 +31,7 @@ function recordParticles() {
 
 function mousePressed() {
     backgroundColor = random(360);
+    $("#text").fadeOut(1000);
 }
 
 function mouseReleased() {
