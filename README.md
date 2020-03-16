@@ -1,2 +1,2 @@
 ##### *
-[Click me!](https://byjoohyunpark.github.io/tropical/)
+[Click me!](https://jooohyunpark.github.io/tropical/)
